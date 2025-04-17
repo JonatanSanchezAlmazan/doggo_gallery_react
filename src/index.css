@@ -1,0 +1,66 @@
+@import 'tailwindcss';
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a1b1d;
+    --foreground: #e6e6e6;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #ffff;
+    --foreground: #040404;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* En modo claro */
+body[data-theme='dark'] input:-webkit-autofill {
+  background-color: #0f172a !important;
+  -webkit-box-shadow: 0 0 0 1000px #0f172a inset !important;
+  -webkit-text-fill-color: white !important;
+}
+
+body[data-theme='light'] input:-webkit-autofill {
+  background-color: #ffff !important;
+  -webkit-box-shadow: 0 0 0 1000px #ffff inset !important;
+  -webkit-text-fill-color: #040404 !important;
+}
+
+.container {
+  max-width: 1400px;
+  margin: auto;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+body[data-theme='light']::-webkit-scrollbar-track {
+  background: #ffff;
+}
+body[data-theme='light'] ::-webkit-scrollbar-track {
+  background: #ffff;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #111d38;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #895cd6;
+  border-radius: 20px;
+}
