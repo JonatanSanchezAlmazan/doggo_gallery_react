@@ -8,7 +8,7 @@ const Home = ({ breeds, loading }) => {
       <section>
         <h2 className="text-[36px] mb-[20px]">Galería de imagenes</h2>
         {loading && <Loading />}
-        <div className="flex flex-wrap gap-5 container">
+        <div className="flex flex-wrap gap-5 container justify-center items-center">
           {breeds.map((breed) => (
             <CardBreed breed={breed} key={breed.id} />
           ))}
