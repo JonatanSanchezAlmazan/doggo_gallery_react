@@ -37,7 +37,7 @@ const Home = ({ breeds, loading, error }) => {
           {currentBreeds.map((breed) => (
             <CardBreed breed={breed} key={breed.id} />
           ))}
-          <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={totalPages} />
+          {!error && !loading && <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={totalPages} />}
         </div>
       </section>
     </main>

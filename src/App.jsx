@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './pages/home/Home';
 import BreedDetail from './pages/breedDetail/BreedDetail';
@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     const fetchBreeds = async () => {
       try {
-        const response = await fetch(`https://api.thedogapi.com/v1/breeds?limit=52&api_key=${import.meta.env.VITE_API_KEY}`);
+        const response = await fetch(`https://api.thedogapi.com/v1/breeds?&api_key=${import.meta.env.VITE_API_KEY}`);
         const data = await response.json();
         setBreeds(data);
         setLoading(false);
@@ -32,6 +32,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home breeds={breeds} loading={loading} error={error} />} />
         <Route path="/breed/:id" element={<BreedDetail breeds={breeds} />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>
   );
