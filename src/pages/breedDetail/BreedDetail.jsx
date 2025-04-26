@@ -5,12 +5,12 @@ const BreedDetail = ({ breeds }) => {
   const navigate = useNavigate();
   const breed = breeds.find((b) => b.id === parseInt(id));
 
-  const back = () => {
+  const backHome = () => {
     navigate('/');
   };
   return (
     <section className=" w-full flex flex-col gap-10 justify-start items-start p-5">
-      <button onClick={back} className="cursor-pointer">
+      <button onClick={backHome} className="cursor-pointer border rounded-lg p-1">
         Volver a galería
       </button>
       <div className="border p-2 flex flex-col max-w-[800px] rounded-lg flex flex-col gap-5 m-auto">
